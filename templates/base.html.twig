@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr" xml:lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <!-- <link rel="stylesheet" href="{{ asset('/bootstrap_css/vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}"> -->
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
         {% block stylesheets %}{% endblock %}
+        <style type="text/css">.container-fluid a.navbar-brand{color: #fff!important;}.container-fluid a.navbar-brand:hover{text-decoration: underline;}.container-fluid a.navbar-brand:focus{text-decoration: underline;}</style>
     </head>
     <body>
+        <nav class="navbar navbar-light bg-primary ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ path('article_index') }}">Les Articles</a>
+                <a class="navbar-brand" href="{{ path('article_new') }}">Créer un Article</a>
+                <a class="navbar-brand" href="{{ path('category_index') }}">Les Catégories</a>
+                <a class="navbar-brand" href="{{ path('category_new') }}">Créer une Catégorie</a>
+            </div>
+        </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
